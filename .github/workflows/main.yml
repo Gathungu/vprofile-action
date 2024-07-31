@@ -1,7 +1,7 @@
 name: vprofile actions
 on: workflow_dispatch
 env:
-    AWS_REGION: us-eat-1
+    AWS_REGION: us-east-1
     ECR_REPOSITORY: vprofileapp
     EKS_CLUSTER: vprofile-eks
 
@@ -43,6 +43,9 @@ jobs:
                 -Dsonar.java.checkstyle.reportPaths=target/checkstyle-result.xml
                 -Dsonar.java.binaries=target/test-classes/com/visualpathit/account/controllerTest
 
+
+
+    
           # Check the Quality Gate status.
           - name: SonarQube Quality Gate check
             id: sonarqube-quality-gate-check
